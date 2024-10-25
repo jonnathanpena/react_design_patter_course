@@ -1,8 +1,14 @@
+import { CurrentUserLoader } from './CurrentUserLoader';
+import { UserInfo } from './UserInfo';
+
 import './App.css';
+import React from 'react';
 
 function App() {
   return (
-    <p>LinkedIn Learning React: Design Patterns</p>
+    <CurrentUserLoader>
+      <UserInfo />
+    </CurrentUserLoader>
   );
 }
 
