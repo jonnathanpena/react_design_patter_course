@@ -1,14 +1,15 @@
 import { CurrentUserLoader } from './CurrentUserLoader';
 import { UserInfo } from './UserInfo';
+import { UserLoader } from './UserLoader';
 
 import './App.css';
 import React from 'react';
 
 function App() {
   return (
-    <CurrentUserLoader>
+    <UserLoader userId="123">
       <UserInfo />
-    </CurrentUserLoader>
+    </UserLoader>
   );
 }
 
