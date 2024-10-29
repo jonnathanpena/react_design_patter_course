@@ -1,9 +1,11 @@
 import './App.css';
-import { Modal } from './Modal';
+import { UncrontrolledModal } from './UncrontrolledModal';
 
 function App() {
   return (
-    <Modal />
+    <>
+      <UncrontrolledModal />
+    </>
   );
 }
 
