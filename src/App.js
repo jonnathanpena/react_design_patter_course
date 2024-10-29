@@ -1,8 +1,9 @@
 import './App.css';
+import { UncrontolledForm } from './UncrontrolledForm';
 
 function App() {
   return (
-    <p>LinkedIn Learning React: Design Patterns</p>
+    <UncrontolledForm />
   );
 }
 
