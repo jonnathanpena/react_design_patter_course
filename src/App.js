@@ -1,4 +1,5 @@
-import { UncontrolledOnboardingFlow } from './UncontrolledOnboardingFlow';
+import { useState } from 'react';
+import { ControlledOnboardingFlow } from './ControlledOnboardingFlow';
 import './App.css';
 
 const StepOne = ({
@@ -19,7 +20,7 @@ const StepTwo = ({
   <>
     <h1>Step 2</h1>
     <button
-      onClick={() => goToNext({ age: 25 })}
+      onClick={() => goToNext({ age: 50 })}
     >
       Next
     </button>
@@ -30,6 +31,19 @@ const StepThree = ({
 }) => (
   <>
     <h1>Step 3</h1>
+    <p>Congratulations! You qualify for our senior discount</p>
+    <button
+      onClick={() => goToNext({})}
+    >
+      Next
+    </button>
+  </>
+);
+const StepFour = ({
+  goToNext,
+}) => (
+  <>
+    <h1>Step 4</h1>
     <button
       onClick={() => goToNext({ hairColor: 'brown' })}
     >
@@ -39,15 +53,25 @@ const StepThree = ({
 );
 
 function App() {
+  const [onboardingData, setOnboardingData] = useState({});
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+   const onNext = stepData => {
+     setOnboardingData({ ...onboardingData, ...stepData });
+     setCurrentIndex(currentIndex + 1);
+  };
+
   return (
     <>
-      <UncontrolledOnboardingFlow
-        onFinish={data => console.log(data)}
+      <ControlledOnboardingFlow
+        currentIndex={currentIndex}
+        onNext={onNext}
       >
         <StepOne />
         <StepTwo />
-        <StepThree />
-      </UncontrolledOnboardingFlow>
+        {onboardingData.age >= 100 && <StepThree />}
+        <StepFour />
+      </ControlledOnboardingFlow>
     </>
   );
 }
