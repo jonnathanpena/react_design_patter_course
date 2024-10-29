@@ -1,9 +1,9 @@
 import './App.css';
-import { ControlledForm } from './ControlledForm';
+import { Modal } from './Modal';
 
 function App() {
   return (
-    <ControlledForm />
+    <Modal />
   );
 }
 
