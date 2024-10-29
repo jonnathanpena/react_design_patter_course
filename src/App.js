@@ -6,7 +6,9 @@ const StepOne = ({
 }) => (
   <>
     <h1>Step 1</h1>
-    <button onClick={goToNext}>
+    <button
+      onClick={() => goToNext({ name: 'John Due' })}
+    >
       Next
     </button>
   </>
@@ -16,7 +18,9 @@ const StepTwo = ({
 }) => (
   <>
     <h1>Step 2</h1>
-    <button onClick={goToNext}>
+    <button
+      onClick={() => goToNext({ age: 25 })}
+    >
       Next
     </button>
   </>
@@ -26,7 +30,9 @@ const StepThree = ({
 }) => (
   <>
     <h1>Step 3</h1>
-    <button onClick={goToNext}>
+    <button
+      onClick={() => goToNext({ hairColor: 'brown' })}
+    >
       Next
     </button>
   </>
@@ -35,7 +41,9 @@ const StepThree = ({
 function App() {
   return (
     <>
-      <UncontrolledOnboardingFlow>
+      <UncontrolledOnboardingFlow
+        onFinish={data => console.log(data)}
+      >
         <StepOne />
         <StepTwo />
         <StepThree />
