@@ -1,21 +1,45 @@
-import { useState } from 'react';
-import { CrontrolledModal } from './ControlledModal';
+import { UncontrolledOnboardingFlow } from './UncontrolledOnboardingFlow';
 import './App.css';
 
-function App() {
-  const [shouldShow, setShouldShow] = useState(false);
+const StepOne = ({
+  goToNext,
+}) => (
+  <>
+    <h1>Step 1</h1>
+    <button onClick={goToNext}>
+      Next
+    </button>
+  </>
+);
+const StepTwo = ({
+  goToNext,
+}) => (
+  <>
+    <h1>Step 2</h1>
+    <button onClick={goToNext}>
+      Next
+    </button>
+  </>
+);
+const StepThree = ({
+  goToNext,
+}) => (
+  <>
+    <h1>Step 3</h1>
+    <button onClick={goToNext}>
+      Next
+    </button>
+  </>
+);
 
+function App() {
   return (
     <>
-      <CrontrolledModal
-        shouldShow={shouldShow}
-        onRequestClose={() => setShouldShow(false)}
-      >
-        <h1>Hello Controlled Modal</h1>
-      </CrontrolledModal>
-      <button onClick={() => setShouldShow(!shouldShow)}>
-        {shouldShow ? 'Hide modal' : 'Show modal'}
-      </button>
+      <UncontrolledOnboardingFlow>
+        <StepOne />
+        <StepTwo />
+        <StepThree />
+      </UncontrolledOnboardingFlow>
     </>
   );
 }
