@@ -1,8 +1,12 @@
+import { printProps } from './printProps';
+import { UserInfo } from './UserInfo';
 import './App.css';
+
+const UserInfoWrapped = printProps(UserInfo);
 
 function App() {
   return (
-    <p>LinkedIn Learning React: Design Patterns</p>
+    <UserInfoWrapped a={1} b="Hello" c={{ name: 'Shaun' }} />
   );
 }
 
