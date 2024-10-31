@@ -1,12 +1,9 @@
-import { UserInfo } from './UserInfo';
-import { widthUser } from './withUser';
+import { UserInfoForm } from './UserInfoForm';
 import './App.css';
-
-const UserInfoWithLoader = widthUser(UserInfo, '234');
 
 function App() {
   return (
-    <UserInfoWithLoader />
+    <UserInfoForm />
   );
 }
 
