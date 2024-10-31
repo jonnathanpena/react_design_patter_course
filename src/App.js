@@ -1,12 +1,12 @@
-import { printProps } from './printProps';
 import { UserInfo } from './UserInfo';
+import { widthUser } from './withUser';
 import './App.css';
 
-const UserInfoWrapped = printProps(UserInfo);
+const UserInfoWithLoader = widthUser(UserInfo, '234');
 
 function App() {
   return (
-    <UserInfoWrapped a={1} b="Hello" c={{ name: 'Shaun' }} />
+    <UserInfoWithLoader />
   );
 }
 
