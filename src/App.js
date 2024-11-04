@@ -1,5 +1,5 @@
 import './App.css';
-import { BigSuccessButton, DangerButton } from './composition';
+import { BigSuccessButton, DangerButton } from './partiallyApplied';
 
 /* const nestedObject = {
   a: 1,
